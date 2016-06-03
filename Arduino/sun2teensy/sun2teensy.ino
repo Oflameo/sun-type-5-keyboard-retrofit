@@ -20,10 +20,21 @@ byte dropFromKeyStack( char key ){
   return 0;
 }
 //TODO add keyboard beeper test code
+
+void beep(int len) {
+  Serial1.write( 0x02 );
+  delay( len );
+  Serial1.write( 0x03 );
+}
+
 //TODO add keyboard beeper code to respond to exceptions
 void setup(){
   Serial.begin( 9600 );
   Serial1.begin( 1200 );
+  //tada
+  beep( 100 );
+  delay( 50 );
+  beep( 100 );
 }
 
 void loop(){
