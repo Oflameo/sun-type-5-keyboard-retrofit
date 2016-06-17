@@ -80,9 +80,18 @@ void handleKeypress( byte in ) {
   switch ( in ) {
     case 0x4C: mod |= MODIFIERKEY_CTRL;   break;
     case 0xCC: mod &= ~MODIFIERKEY_CTRL;  break;
+
+    case 0x4D: addToKeyStack( KEY_A );    break;
+    case 0xCD: dropFromKeyStack( KEY_A ); break;
+
+    case 0x68: addToKeyStack( KEY_B );    break;
+    case 0xE8: dropFromKeyStack( KEY_B ); break;
     
     case 0x66: addToKeyStack( KEY_C );    break;
     case 0xE6: dropFromKeyStack( KEY_C ); break;
+
+    case 0x4F: addToKeyStack( KEY_D );    break;
+    case 0xCF: dropFromKeyStack( KEY_D ); break;
   }
 }
 
